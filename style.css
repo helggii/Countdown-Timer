@@ -1,0 +1,332 @@
+:root {
+  /* Primary Colors */
+  --soft-red: hsl(345, 95%, 68%);
+  --grayish-blue: hsl(237, 18%, 59%);
+
+  --hard-red: hsl(345, 61%, 57%);
+  --darker-desautrated-blue: #2c2c44;
+
+  /* Neutral Colors */
+  --white: hsl(0, 0%, 100%);
+  --dark-desaturated-blue: #343650;
+  --very-dark-blue: #1e1f29;
+  --mostly-black-blue: #191a24;
+  --mountain-purple: #281c2c;
+
+  font-size: 14px;
+}
+
+html {
+  font-size: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: url("./images/bg-stars.svg"),
+    linear-gradient(180deg, #191a24 0%, #281c2c 100%);
+
+  font-family: "Red Hat Text", sans-serif;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  font-size: 1.5rem;
+  color: var(--white);
+  margin: 10rem 0 5rem 0;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 50vw;
+}
+
+.card {
+  margin-right: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card:last-child {
+  margin-right: 0%;
+}
+.figure {
+  position: relative;
+  display: flex;
+  float: left;
+  height: 8rem;
+  width: 8.4rem;
+  border-radius: 5px;
+  background-color: var(--dark-desaturated-blue);
+  font-size: 4rem;
+  text-align: center;
+}
+
+.count-title {
+  position: relative;
+  margin: 1rem;
+  color: var(--grayish-blue);
+}
+
+.top {
+  z-index: 3;
+  background-color: var(--darker-desautrated-blue);
+  color: var(--hard-red);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  transform-origin: 50% 100%;
+  transform: perspective(200px);
+}
+
+.top-back {
+  background-color: var(--dark-desaturated-blue);
+  color: var(--soft-red);
+
+  z-index: 4;
+  bottom: 0;
+  transform-origin: 50% 0%;
+  transform: rotateX(180deg) perspective(200px);
+
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.top-back span {
+  position: absolute;
+
+  margin: auto;
+}
+
+.top,
+.top-back {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.top:after,
+.bottom-back:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.bottom-back:after {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.bottom {
+  z-index: 1;
+  width: 100%;
+  top: 50%;
+  height: 50%;
+  overflow: hidden;
+  height: min-content;
+  border-radius: 5px;
+  left: 0;
+  right: 0;
+  position: absolute;
+
+  color: var(--soft-red);
+}
+
+.bottom-back {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  z-index: 2;
+  top: 0;
+
+  overflow: hidden;
+  background-color: var(--darker-desautrated-blue);
+  color: var(--hard-red);
+
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.top-text {
+  padding-top: 1.38rem;
+}
+.top-back-text {
+  line-height: 0;
+}
+
+.bottom-text {
+  overflow: hidden;
+  margin-top: -2.61rem;
+}
+
+.bottom-back-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding-top: 1.38rem;
+}
+
+/* side dots */
+
+.left-dot {
+  background-color: var(--very-dark-blue);
+  border-radius: 50%;
+  position: absolute;
+  align-self: center;
+  left: -0.25rem;
+  z-index: 10;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.right-dot {
+  background-color: var(--very-dark-blue);
+  border-radius: 50%;
+  position: absolute;
+  align-self: center;
+  right: -0.25rem;
+  z-index: 10;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+/* Footer styling */
+
+footer {
+  z-index: 100;
+  display: flex;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: sticky;
+
+  position: absolute;
+  background-image: url("./images/pattern-hills.svg");
+  height: 8rem;
+}
+.social-media-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.icon {
+  margin: 1rem;
+}
+svg:hover > path {
+  fill: var(--soft-red);
+}
+
+@media screen and (max-width: 666px) {
+  html {
+    font-size: 10px;
+  }
+  .title {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+
+  .cards-wrapper {
+    max-width: 95vw;
+    width: 95vw;
+    justify-content: space-evenly;
+  }
+
+  .card {
+    margin-right: 0;
+  }
+
+  .figure {
+    width: 5rem;
+    height: 4.6rem;
+    font-size: 2.8rem;
+  }
+
+  .count-title {
+    font-size: 0.8rem;
+    margin: auto;
+  }
+
+  .top-text {
+    padding-top: 0.45rem;
+  }
+  .top-back-text {
+    line-height: 0;
+  }
+
+  .bottom-text {
+    overflow: hidden;
+    margin-top: -1.8rem;
+  }
+
+  .bottom-back-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-top: 0.45rem;
+  }
+
+  /* side dots */
+
+  .left-dot {
+    background-color: var(--very-dark-blue);
+    border-radius: 50%;
+    position: absolute;
+    align-self: center;
+    left: -0.25rem;
+    z-index: 10;
+    width: 0.45rem;
+    height: 0.45rem;
+  }
+
+  .right-dot {
+    background-color: var(--very-dark-blue);
+    border-radius: 50%;
+    position: absolute;
+    align-self: center;
+    right: -0.25rem;
+    z-index: 10;
+    width: 0.45rem;
+    height: 0.45rem;
+  }
+
+  footer {
+    height: 25%;
+  }
+}
