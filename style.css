@@ -33,6 +33,7 @@ body {
     linear-gradient(180deg, #191a24 0%, #281c2c 100%);
 
   font-family: "Red Hat Text", sans-serif;
+  overflow: hidden;
 }
 
 .main {
@@ -234,6 +235,7 @@ footer {
 
   position: absolute;
   background-image: url("./images/pattern-hills.svg");
+  background-repeat: repeat-x;
   height: 8rem;
 }
 .social-media-wrapper {
@@ -327,6 +329,7 @@ svg:hover > path {
   }
 
   footer {
-    height: 25%;
+    background-size: cover;
+    background-repeat: repeat-x;
   }
 }
