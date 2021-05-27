@@ -234,6 +234,7 @@ footer {
 
   position: absolute;
   background-image: url("./images/pattern-hills.svg");
+  background-size: cover;
   height: 8rem;
 }
 .social-media-wrapper {
@@ -327,6 +328,8 @@ svg:hover > path {
   }
 
   footer {
-    height: 25%;
+    background-size: cover;
+    background-repeat: repeat-x;
+    height: 13%;
   }
 }
