@@ -1,5 +1,6 @@
 # Countdown timer
 
-![Design preview for the Launch countdown timer coding challenge](./design/desktop-preview.jpg)
+Hosted here: https://countdown-timer-k90hzpolh-helggii.vercel.app/
 
-Frontend Mentor challenge. Took more than I thought, aligning divs is annoying.
+I used the GSAP javascript library to animate each card dropping down</h3>
+CSS</span> for the styling
